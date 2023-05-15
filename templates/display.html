@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Links the css for this HTML -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='graphics.css') }}" /> 
+    </head>
+
+    <body>
+        <h1>HamBot</h1>
+        <br>
+
+        <!-- Class that holds the speech bubble image, assigns height and width for it too -->
+        <div class="bubble">
+            <img src="{{ url_for('static', filename='bubble.png') }}"
+            style="width:600px;height:500px">
+        </div>
+
+        <!-- Class that holds the Hamilton portrait image, assigns height and width for it too -->
+        <div class="portrait">
+            <img src="{{ url_for('static', filename='aham.jpg') }}"
+            style="width:400px;height:500px">
+        </div>
+        
+        <!-- Code for the text box the user types into and the submit button -->
+        <br>
+        Type here:
+        <form method="POST">
+            <textarea id="text" name="text" rows="3" cols="60"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Paragraph with the id of "output" contains the contents of the bot's output-->
+        <p id="output">
+        {% if result %}
+            {{result}}
+        {% endif %}
+        </p>
+    </body>
+</html>

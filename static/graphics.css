@@ -1,0 +1,14 @@
+/* Puts images side by side */
+.bubble, .portrait {
+    display: inline-flex
+}
+
+/* Places the output text inside the speech bubble */
+#output {
+    z-index: 1;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    max-width: 250px;
+    word-wrap: break-word;
+}
